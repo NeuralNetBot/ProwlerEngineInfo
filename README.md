@@ -1,5 +1,20 @@
 # Prowler Engine Info
 
+## Basic Editor
+
+Entities can be created and change parenting in the scene graph through the scene panel.
+
+![image](https://github.com/user-attachments/assets/2dd2ff24-bdeb-4b45-8210-35d785c097d4)
+
+Entity component attributees can be modified and added through the entity panel.
+
+![image](https://github.com/user-attachments/assets/5ff6931a-1b16-4e21-ac89-c6647f09cd04)
+
+Full editor view
+
+![image](https://github.com/user-attachments/assets/ae3a49c7-9126-41e1-9990-be9bfbb3489c)
+
+
 ## ECS
 
 ### Info
