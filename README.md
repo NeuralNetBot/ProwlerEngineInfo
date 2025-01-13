@@ -1,6 +1,11 @@
 # Prowler Engine Info
 
 ## ECS
+
+### Info
+Components are stored in dense continuous arrays with custom pool based allocation.\
+Maintains references even when entities or components are removed from the scene.
+
 ### Basic usage
 
 Defining components:
@@ -18,7 +23,7 @@ PROWLER_COMPONENT(MyComponent)
 Creating entities and working with components:
 
 ```cpp
-Entity& e = scene->CreateEntity("optional name");
+Entity& e = scene->CreateEntity("optional entity name");
 e.addComponent<MyComponent>(/*optional args for constructors*/ 1.0f);
 
 bool hasMyComponent = e.hasComponent<MyComponent>();
