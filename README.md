@@ -1,5 +1,7 @@
 # Prowler Engine Info
 
+## Project is currrently closed source
+
 ## Basic Editor
 
 Entities can be created and change parenting in the scene graph through the scene panel.
