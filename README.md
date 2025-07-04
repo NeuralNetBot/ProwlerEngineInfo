@@ -16,6 +16,23 @@ Full editor view
 
 ![image](https://github.com/user-attachments/assets/ae3a49c7-9126-41e1-9990-be9bfbb3489c)
 
+## Scripts
+
+```cpp
+classs MyScript : public Prowler::Script
+{
+public:
+    void onInit() {}           //called on script creation
+    void onUpdate(float dt) {} //called every tick
+    void onShutdown() {}.      //called on script removal or entity deletion 
+private:
+    float myFloat;
+    PROWLER_SCRIPT_PARAM(MyScript, myFloat) //params will show up editable in editor
+    Vec3 myVec;
+    PROWLER_SCRIPT_PARAM(MyScript, myVec)
+}:
+PROWLER_SCRIPT(MyScript)
+```
 
 ## ECS
 
