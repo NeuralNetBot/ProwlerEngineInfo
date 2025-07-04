@@ -22,10 +22,18 @@ Full editor view
 classs MyScript : public Prowler::Script
 {
 public:
-    void onInit() {}           //called on script creation
-    void onUpdate(float dt) {} //called every tick
-    void onShutdown() {}.      //called on script removal or entity deletion 
+    void onCreate()            //called on script creation
+    {
+        cc = entity.getComponent<CameraComponent>();
+    }
+    void onUpdate(float dt).   //called every tick
+    {
+        cc.fov = 60 + 15 * sin(dt);
+    }
+    void onDestroy() {}.       //called on script removal or entity deletion 
 private:
+    CameraComponent* cc;
+
     float myFloat;
     PROWLER_SCRIPT_PARAM(MyScript, myFloat) //params will show up editable in editor
     Vec3 myVec;
