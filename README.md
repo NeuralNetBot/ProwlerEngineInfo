@@ -97,7 +97,7 @@ Assets are all refered to under a UUID for every unique asset.
 
 Assets can be retrieved and or loaded as the following.
 ```cpp
-AssetManager::get<ExampleAssetType>(my_asset_uuid);
+AssetRef<ExampleAssetType> myAsset = AssetManager::get<ExampleAssetType>(my_asset_uuid);
 ```
 These can also be called within scripts to create new entities and assign their respective assets manually.
 
@@ -108,3 +108,9 @@ In the event an asset cannot be loaded, such as a invalid handle or missing file
 All assets are stored under two modes:
 Editor Mode where the assets are stored in a user friendly YAML files linking to source files such as images or 3d formats.
 Runtime Mode where the assets get put into a pure binary format and compressed down into faster runtime formats such as BCn formats for textures.
+
+The current types of assets built-in are as follows:
+SceneAsset - contains all the positions and other data for every entity in the scene as well as scene specific settings such as the global light map settings.
+MeshAsset - either holds directly or references a 3d model file for a mesh.
+TextureAsset - either holds directly or references a image file to be used as a texture.
+MaterialAsset - contains information about the material as well as references multiple TextureAssets as dependencies and are refered by their UUID
