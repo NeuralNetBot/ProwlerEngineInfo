@@ -18,6 +18,9 @@ Full editor view
 
 ## Scripts
 
+### Info
+Scripts are contained in a ScriptComponent for any entity.
+
 ```cpp
 classs MyScript : public Prowler::Script
 {
@@ -88,3 +91,20 @@ for(auto& component : scene->getComponentsFast<MyComponent>())
   std::cout << component.foo << std::endl;
 }
 ```
+
+## Asset management
+Assets are all refered to under a UUID for every unique asset.
+
+Assets can be retrieved and or loaded as the following.
+```cpp
+AssetManager::get<ExampleAssetType>(my_asset_uuid);
+```
+These can also be called within scripts to create new entities and assign their respective assets manually.
+
+Loading will happen asynchronously if the asset is yet to be loaded.
+If the asset is not loaded the asset will return a temporary/placeholder asset that will automatically update and propagate the nessesary events to ensure it is properly in use.
+In the event an asset cannot be loaded, such as a invalid handle or missing files, the asset will remain as the temporary/placeholder asset and give a suitable error message.
+
+All assets are stored under two modes:
+Editor Mode where the assets are stored in a user friendly YAML files linking to source files such as images or 3d formats.
+Runtime Mode where the assets get put into a pure binary format and compressed down into faster runtime formats such as BCn formats for textures.
